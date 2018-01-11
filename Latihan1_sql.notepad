@@ -1,0 +1,18 @@
+//menampilkan email dari yg ter akhir
+1.select * from employees order by email desc
+//memanpilkan salary dari 3200 sampai dengan 12000
+2.select * from employees where salary >=3200 and salary <=12000 order by salary desc
+//menampilkan nama karyawan yang huruf depannya dari huruf 'A'
+3.select first_name from employees where first_name Like 'A%'
+//menampilkan kayawan degan id (103,115,196,187,102,100)
+4.select * from employees where employee_id in (103,115,196,187,102,100)
+//menampilkan data karyawan yang nama belakangnya memiliki huruf kedua u.
+5.select last_name from employees where last_name like '%u_'
+//menampilkan kode department apa saja yang ada di tabel employees secara unique
+6.select distinct department_id from employees 
+//menampilkan nama lengkap karyawan, kode jabatan, gaji setahun dari table employees yang kode manager sama dengan 100.
+7.select first_name ||' '|| last_name as Nama_lengkap ,job_id,salary,(12*salary) as Gaji_1_Tahun from employees where manager_id =100 order by gaji_1_tahun desc
+//menampilkan nama belakang, gaji perbulan, kode jabatan dari table employees yang tidak memiliki komisi
+8.select last_name,salary,job_id,commission_pct from employees  where commission_pct is null  order by salary asc 
+//menampilkan data karyawan yang bukan dari jabatan IT_PROG dan SH_CLERK
+9.select * from Employees where job_id not in ('IT_PROG' ,'SH_CLERK')
